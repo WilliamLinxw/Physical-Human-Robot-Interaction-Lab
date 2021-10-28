@@ -20,22 +20,28 @@ vel_filt_off = filtfilt(b_v, a_v, vel_raw);
 acc_filt_off = filtfilt(b_a, a_a, acc_raw);
 
 %Position plot
-% plot(time,pos_raw, time, pos_filt_on, time, pos_filt_off);
-% title('Position [deg] measured by Hall-Sensor raw / online-filtered / offline-filtered');
-% xlabel('Time [s]');
-% ylabel('Position [deg]');
-% legend('Position raw','Position online-filtered', 'Position offline-filtered');
+figure(1)
+plot(time, pos_raw, time, pos_filt_on, time, pos_filt_off);
+title('Position [deg] measured by Hall-Sensor raw / online-filtered / offline-filtered');
+xlabel('Time [s]');
+ylabel('Position [deg]');
+legend('Position raw','Position online-filtered', 'Position offline-filtered');
+grid
 
-% %Velocity plot
-% plot(time, vel_raw, time, vel_filt_on, time, vel_filt_off);
-% title('Velocity [deg/s] measured by Hall-Sensor raw / online-filtered / offline-filtered');
-% xlabel('Time [s]');
-% ylabel('Velocity [deg/s]');
-% legend('Velocity raw','Velocity online-filtered', 'Velocity offline-filtered');
-% 
+%Velocity plot
+figure(2)
+plot(time, vel_raw, time, vel_filt_on, time, vel_filt_off);
+title('Velocity [deg/s] measured by Hall-Sensor raw / online-filtered / offline-filtered');
+xlabel('Time [s]');
+ylabel('Velocity [deg/s]');
+legend('Velocity raw','Velocity online-filtered', 'Velocity offline-filtered');
+grid
+
 %Acceleration plot
+figure(3)
 plot(time, acc_raw, time, acc_filt_on, time, acc_filt_off);
 title('Acceleration [deg/s^2] measured by Hall-Sensor raw / online-filtered / offline-filtered');
 xlabel('Time [s]');
 ylabel('Acceleration [deg/s^2]');
 legend('Acceleration raw','Acceleration online-filtered','Acceleration offline-filtered');
+grid
