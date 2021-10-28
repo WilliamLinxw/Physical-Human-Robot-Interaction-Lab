@@ -8,16 +8,16 @@ acc_filt_on = data(:,6);
 time = data(:,7);
 
 %design lowpassfilter for Position
-d_pos = designfilt('lowpassfir', 'FilterOrder', 2, 'CutoffFrequency', .125, 'SampleRate', 10);
+[b_p, a_p] = butter(2, 20/(200/2));
 %design lowpassfilter for Velocity
-d_vel = designfilt('lowpassfir', 'FilterOrder', 2, 'CutoffFrequency', .125, 'SampleRate', 10);
+[b_v, a_v] = butter(2, 10/(200/2));
 %design lowpassfilter for Acceleration
-d_acc = designfilt('lowpassfir', 'FilterOrder', 2, 'CutoffFrequency', 5, 'SampleRate', 10);
+[b_a, a_a] = butter(2, 5/(200/2));
 
 %offline filtering
-pos_filt_off = filtfilt(d_pos, pos_raw);
-vel_filt_off = filtfilt(d_vel, vel_raw);
-acc_filt_off = filtfilt(d_acc, acc_raw);
+pos_filt_off = filtfilt(b_p, a_p, pos_raw);
+vel_filt_off = filtfilt(b_v, a_v, vel_raw);
+acc_filt_off = filtfilt(b_a, a_a, acc_raw);
 
 %Position plot
 % plot(time,pos_raw, time, pos_filt_on, time, pos_filt_off);
