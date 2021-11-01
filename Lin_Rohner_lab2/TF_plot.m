@@ -18,8 +18,8 @@ end
 
 % Scatter Plot
 scatter(voltage, degree);
-ylabel('Position (deg)');
-xlabel('Voltage (V)');
+ylabel('Position [deg]');
+xlabel('Voltage [V]');
 hold on
 
 % Get the transfer function voltage = a * position + b
@@ -36,5 +36,6 @@ degree_est = polyval(c,voltage);
 hold on
 plot(voltage,degree_est,'r--','LineWidth',2);
 
-text(0, -10 ,'P(degree) = 9.6312*Vol(V) + 0.16395');
+text(0, -10 ,'P(degree) = 9.6312*Volt(V) + 0.16395');
 title('Transfer Function of the Hall Sensor');
+legend('Measured output [V] dependent on input [deg]', 'Transfer function', 'Location', 'southoutside', 'Orientation', 'vertical');

@@ -21,6 +21,8 @@ yyaxis right
 plot(time,position_deg);
 ylabel('Position [deg]');
 
+legend('Position [V]', 'Position [deg]' ,'Location', 'southoutside', 'Orientation', 'horizontal');
+
 
 
 

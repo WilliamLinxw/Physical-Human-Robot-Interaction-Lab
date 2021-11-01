@@ -1,4 +1,4 @@
-data = xlsread('hall_sensor_speadsheet_pos_vel_acc.xlsx'); 
+ data = xlsread('hall_sensor_speadsheet_pos_vel_acc.xlsx'); 
 pos_raw = data(:,1);
 pos_filt_on = data(:,2);
 vel_raw = data(:,3);
@@ -21,27 +21,27 @@ acc_filt_off = filtfilt(b_a, a_a, acc_raw);
 
 %Position plot
 figure(1)
-plot(time, pos_raw, time, pos_filt_on, time, pos_filt_off);
+plot(time, pos_raw, '-b', time, pos_filt_on, '--r', time, pos_filt_off, '-.g', 'LineWidth', 1.2);
 title('Position [deg] measured by Hall-Sensor raw / online-filtered / offline-filtered');
 xlabel('Time [s]');
 ylabel('Position [deg]');
-legend('Position raw','Position online-filtered', 'Position offline-filtered');
+legend('Position raw [deg]','Position online-filtered [deg]', 'Position offline-filtered [deg]', 'Location', 'southoutside', 'Orientation', 'vertical');
 grid
 
 %Velocity plot
 figure(2)
-plot(time, vel_raw, time, vel_filt_on, time, vel_filt_off);
+plot(time, vel_raw, '-b', time, vel_filt_on, '--r', time, vel_filt_off, '-.g', 'LineWidth', 1.2);
 title('Velocity [deg/s] measured by Hall-Sensor raw / online-filtered / offline-filtered');
 xlabel('Time [s]');
 ylabel('Velocity [deg/s]');
-legend('Velocity raw','Velocity online-filtered', 'Velocity offline-filtered');
+legend('Velocity raw [deg/s]','Velocity online-filtered [deg/s]', 'Velocity offline-filtered [deg/s]', 'Location', 'southoutside', 'Orientation', 'vertical');
 grid
 
 %Acceleration plot
 figure(3)
-plot(time, acc_raw, time, acc_filt_on, time, acc_filt_off);
+plot(time, acc_raw, '-b', time, acc_filt_on, '--r', time, acc_filt_off, '-.g', 'LineWidth', 1.2);
 title('Acceleration [deg/s^2] measured by Hall-Sensor raw / online-filtered / offline-filtered');
 xlabel('Time [s]');
 ylabel('Acceleration [deg/s^2]');
-legend('Acceleration raw','Acceleration online-filtered','Acceleration offline-filtered');
+legend('Acceleration raw [deg/s^2]','Acceleration online-filtered [deg/s^2]','Acceleration offline-filtered [deg/s^2]', 'Location', 'southoutside', 'Orientation', 'vertical');
 grid
