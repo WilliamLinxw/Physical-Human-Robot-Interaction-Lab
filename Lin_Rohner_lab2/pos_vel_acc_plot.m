@@ -1,4 +1,4 @@
- data = xlsread('hall_sensor_speadsheet_pos_vel_acc.xlsx'); 
+data = xlsread('hall_sensor_speadsheet_pos_vel_acc.xlsx'); 
 pos_raw = data(:,1);
 pos_filt_on = data(:,2);
 vel_raw = data(:,3);
