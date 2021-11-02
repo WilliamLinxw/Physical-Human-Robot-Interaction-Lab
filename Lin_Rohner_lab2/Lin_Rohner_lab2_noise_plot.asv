@@ -9,7 +9,7 @@ std_position_volt = std(data(:,2));
 
 yyaxis left
 plot(time, position_volt);
-[t, s] = title('Signal with noise of the Hall-Sensor in [V] and [deg] after TF', ['Mean = ', num2str(mean_position_volt), ' volts ---> ', num2str(mean_position_deg), ' degrees' newline 'Standard deviation = ', num2str(std_position_volt), ' volts ---> ', num2str(std_position_deg), ' degrees']);
+[t, s] = title('Signal with noise of the Hall-Sensor in [V] and [deg] after the transfer fu', ['Mean = ', num2str(mean_position_volt), ' volts ---> ', num2str(mean_position_deg), ' degrees' newline 'Standard deviation = ', num2str(std_position_volt), ' volts ---> ', num2str(std_position_deg), ' degrees']);
 t.FontSize = 16;
 s.Color = 'red';
 s.FontAngle = 'italic';
@@ -21,7 +21,7 @@ yyaxis right
 plot(time,position_deg);
 ylabel('Position [deg]');
 
-legend('Voltage [V]', 'Position [deg]' ,'Location', 'southoutside', 'Orientation', 'horizontal');
+legend('Position [V]', 'Position [deg]' ,'Location', 'southoutside', 'Orientation', 'horizontal');
 
 
 

@@ -15,7 +15,7 @@ torque_est = polyval(c2, voltage);
 
 
 yyaxis left
-plot(voltage, current);
+scatter(voltage, current);
 ylabel('Motor current [A]');
 xlabel('Input voltage [V]');
 hold on
@@ -23,7 +23,7 @@ plot(voltage,current_est,'b--','LineWidth',2);
 hold on
 yyaxis right;
 ylabel('Motor torque [mNm]');
-plot(voltage,torque);
+scatter(voltage,torque);
 hold on
 plot(voltage,torque_est,'r--','LineWidth',2);
 hold on
