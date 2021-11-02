@@ -10,9 +10,9 @@ time = data(:,7);
 %design lowpassfilter for Position
 [b_p, a_p] = butter(2, 20/(200/2));
 %design lowpassfilter for Velocity
-[b_v, a_v] = butter(2, 10/(200/2));
+[b_v, a_v] = butter(2, 40/(200/2));
 %design lowpassfilter for Acceleration
-[b_a, a_a] = butter(2, 5/(200/2));
+[b_a, a_a] = butter(2, 60/(200/2));
 
 %offline filtering
 pos_filt_off = filtfilt(b_p, a_p, pos_raw);
