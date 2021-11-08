@@ -4,7 +4,7 @@ ylabel('Paddle Position [deg]');
 xlabel('Time [sec]');
 hold on
 yyaxis right
-plot(t, v_in);
+plot(t, v_in + V_0);
 ylabel('Motor Input Voltage [V]');
 hold on
 title('Simulink simulated Paddle Position dependent on Motor Input Voltage');
