@@ -11,5 +11,5 @@ hold on
 yyaxis right
 plot(time, voltage);
 ylabel('Motor Input voltage [V]');
-title('Paddle Position dependent on Motor Input voltage');
+title('Measured Paddle Position dependent on Motor Input voltage');
 legend('Paddle Position [deg]', 'Motor Input Voltage [V]', 'Location', 'southoutside', 'Orientation', 'vertical');
