@@ -19,7 +19,7 @@ for i = 1:length(time)
         break
     end
 end
-line([change_time, change_time], [0, -1], 'color', 'black')
+
 
 % Calculate the rising time
 for i = 1:length(time)
@@ -29,7 +29,7 @@ for i = 1:length(time)
         break
     end
 end
-line([t90, t90], [actual(index), -0.5], 'color', 'black')
+
 
 
 rise_time = t90 - change_time;
@@ -45,7 +45,6 @@ for i = 0:length(time)-1
     end
 end
 settling_time = settled_time - change_time;
-line([settled_time+0.0036, settled_time+0.0036], [10.2, -1], 'color', 'black')
 
 txt_st = ['Settling time: ', num2str(settling_time)];
 text(settled_time+0.02,-0.7,txt_st,'FontSize',12);
@@ -67,5 +66,17 @@ overshoot_line = yline(max_value, 'g--');
 txt_max = ['Overshoot:' num2str(max_value)];
 text(16,13.3,txt_max,'FontSize',12);
 
+% Calculate steady state error
+steady_state_all = actual(320:end);
+steady_state = mean(steady_state_all);
+steady_state_error = steady_state - 10;
+txt_leb = ['Steady state error: ' num2str(steady_state_error)];
+text(17,8.5,txt_leb,'FontSize',12);
+
+
+line([settled_time+0.0036, settled_time+0.0036], [10.2, -1], 'color', 'black')
+line([t90, t90], [actual(index), -0.5], 'color', 'black')
+line([change_time, change_time], [0, -1], 'color', 'black')
 title("PID tuning step function")
 legend("Desired Paddle Position [deg]", "Actual Paddle Position [deg]", "Upper error band = 10.2", "Lower error band = 9.8", "Overshoot", "Location", "southoutside", "Orientation", "vertical");
+
