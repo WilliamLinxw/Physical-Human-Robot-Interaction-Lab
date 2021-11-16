@@ -8,8 +8,8 @@ desired = desired(2900:3600);
 actual = actual(2900:3600);
 
 plot(time, desired, time, actual);
-ylabel("Desired and Actual Paddle Position (deg)");
-xlabel("Time (s)");
+ylabel("Desired and Actual Paddle Position [deg]");
+xlabel("Time [sec]");
 hold on
 
 % Get the rise time
