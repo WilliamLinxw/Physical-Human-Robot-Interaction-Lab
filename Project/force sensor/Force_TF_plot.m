@@ -18,7 +18,7 @@ for i = 1:column
     voltage = [voltage, mean(data(2:1415, i))];    
 end
 
-voltage = voltage - 0.086421389;
+voltage = voltage - 0.118712;
 % Scatter Plot
 scatter(voltage, force);
 ylabel('Force [N]');
@@ -41,6 +41,6 @@ force_est = polyval(c,voltage);
 hold on
 plot(voltage,force_est,'r--','LineWidth',2);
 
-text(0, 10 ,'P(force) = 3.5855*Volt(V) -0.058374');
+text(0, 10 ,'P(force) = 3.5855*Volt(V) + 0.057404');
 title('Transfer Function of the Force Sensor');
 legend('Measured output [V] dependent on input [N]', 'Transfer function', 'Location', 'southoutside', 'Orientation', 'vertical');
