@@ -16,7 +16,7 @@ function [fitresult, gof] = createFit(acceleration, velocity, torque)
 
 
 %% Fit: 'Fit Force Feedback'.
-[xData, yData, zData] = prepareSurfaceData( acceleration, velocity, torque);
+[xData, yData, zData] = prepareSurfaceData( acceleration, velocity, torque );
 
 % Set up fittype and options.
 ft = fittype( 'poly11' );
