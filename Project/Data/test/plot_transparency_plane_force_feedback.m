@@ -1,4 +1,4 @@
-data = xlsread("backup_25.xlsx");
+data = xlsread("test.xlsx");
 
 torque = data(:,1);
 acceleration = data(:,2);
