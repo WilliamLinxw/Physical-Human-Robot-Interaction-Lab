@@ -1,4 +1,4 @@
-data = xlsread("uncontrolled.xlsx");
+data = xlsread("fg_compensated.xlsx");
 
 torque = data(:,1);
 acceleration = data(:,2);

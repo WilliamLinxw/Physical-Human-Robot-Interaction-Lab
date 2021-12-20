@@ -21,12 +21,10 @@ end
 voltage = voltage - 0.118712;
 % Scatter Plot
 scatter(voltage, force);
-ylabel('Force [N]');
-xlabel('Voltage [V]');
+ylabel('Force [N]', FontSize=30);
+xlabel('Voltage [V]', FontSize=30);
 hold on
 
-voltage
-force
 % Get the transfer function voltage = a * force + b
 c = polyfit(voltage,force,1);
 
@@ -39,8 +37,8 @@ force_est = polyval(c,voltage);
 
 % Add trend line to plot
 hold on
-plot(voltage,force_est,'r--','LineWidth',2);
+plot(voltage,force_est,'r--','LineWidth', 3);
 
-text(0, 10 ,'P(force) = 3.5855*Volt(V) + 0.057404');
-title('Transfer Function of the Force Sensor');
-legend('Measured output [V] dependent on input [N]', 'Transfer function', 'Location', 'southoutside', 'Orientation', 'vertical');
+text(0, 10 ,'Force(N) = 3.5855*Volt(V) + 0.057404', 'FontSize',20);
+title('Transfer Function of the Force Sensor', FontSize=30);
+legend('Measured output [V] dependent on input [N]', 'Transfer function', 'Location', 'southoutside', 'Orientation', 'vertical', 'Fontsize', 16);
