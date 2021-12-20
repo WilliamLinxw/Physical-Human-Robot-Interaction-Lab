@@ -30,4 +30,4 @@ p_ff.FaceColor = 'b';
 p_ff.EdgeColor = 'b';
 % p_fg.FaceAlpha = 0.3;
 hold off 
-legend('Transparency Plane Uncontrolled','Transparency Plane Friction and Gravity Compendated', 'Transparency Plane Force Feedback')
+legend('Transparency Plane Uncontrolled','Transparency Plane Friction and Gravity Compensated', 'Transparency Plane Force Feedback', 'Location', 'North')
