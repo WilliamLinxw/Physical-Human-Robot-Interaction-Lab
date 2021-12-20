@@ -1,4 +1,4 @@
-data = xlsread("force_feedback.xlsx");
+data = xlsread("uncontrolled.xlsx");
 
 torque = data(:,1);
 acceleration = data(:,2);
