@@ -39,7 +39,8 @@ grid on
 
 subplot(1,3,3);
 plot3(acceleration_ff, velocity_ff, torque_ff, '.', 'Color', 'black','MarkerSize',0.5);
-title('Force Feedback')
+title('Force Feedback');
+subtitle('Feedback gain: kf = 10');
 xlabel('Acceleration [rad/s^2]');
 ylabel('Velocity [rad/s]');
 zlabel('Torque [Nm]');
@@ -71,6 +72,7 @@ grid on
 subplot(1,3,3);
 p_fit_ff = plot( fit_ff, [acceleration_ff, velocity_ff], torque_ff);
 title('Force Feedback')
+subtitle('(Feedback Gain: KF = 1.15)');
 % Label axes
 xlabel( 'Acceleration [rad/s^2]', 'Interpreter', 'none' );
 ylabel( 'Velocity [rad/s]', 'Interpreter', 'none' );
