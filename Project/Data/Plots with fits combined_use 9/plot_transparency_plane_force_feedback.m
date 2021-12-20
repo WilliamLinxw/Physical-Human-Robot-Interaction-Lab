@@ -19,7 +19,7 @@ fit_fg = createFit(acceleration_fg, velocity_fg, torque_fg);
 fit_ff = createFit(acceleration_ff, velocity_ff, torque_ff);
 
 figure('Name','Transparency Planes','NumberTitle','off');
-sgtitle('Transparency Planes');
+sgtitle('Measurements for Transparency Planes');
 subplot(1,3,1);
 p_uc = plot3(acceleration_uc, velocity_uc, torque_uc, '.', 'Color', 'black','MarkerSize',0.5);
 title('Uncontrolled')
@@ -47,11 +47,11 @@ grid on
 
 
 % Plot fit with data.
-figure( 'Name', 'Fit Transparency Planes','NumberTitle','off' );
-sgtitle('Transparency Planes with Fits');
+figure( 'Name', 'Transparency Planes','NumberTitle','off' );
+sgtitle('Transparency Planes');
 subplot(1,3,1);
 p_fit_uc = plot(fit_uc, [acceleration_uc, velocity_uc], torque_uc);
-title('Uncontrolled with Fit')
+title('Uncontrolled')
 legend( p_fit_uc, 'Fit Transparency Planes', 'Torque vs. Acceleration, Velocity', 'Location', 'NorthEast', 'Interpreter', 'none' );
 % Label axes
 xlabel( 'Acceleration [rad/s^2]', 'Interpreter', 'none' );
@@ -61,7 +61,7 @@ grid on
 
 subplot(1,3,2);
 p_fit_fg = plot( fit_fg, [acceleration_fg, velocity_fg], torque_fg);
-title('Force and Gravity Compensated with Fit')
+title('Force and Gravity Compensated')
 % Label axes
 xlabel( 'Acceleration [rad/s^2]', 'Interpreter', 'none' );
 ylabel( 'Velocity [rad/s]', 'Interpreter', 'none' );
@@ -70,7 +70,7 @@ grid on
 
 subplot(1,3,3);
 p_fit_ff = plot( fit_ff, [acceleration_ff, velocity_ff], torque_ff);
-title('Force Feedback with Fit')
+title('Force Feedback')
 % Label axes
 xlabel( 'Acceleration [rad/s^2]', 'Interpreter', 'none' );
 ylabel( 'Velocity [rad/s]', 'Interpreter', 'none' );
